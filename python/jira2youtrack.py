@@ -392,8 +392,9 @@ def process_attachments(source, target, issue, replace=False):
         if 'author' in jira_attachment:
             create_user(target, jira_attachment['author'])
         attachment_name = attachment.name
-        if isinstance(attachment_name, unicode):
-            attachment_name = attachment_name.encode('utf-8')
+        # if isinstance(attachment_name, unicode):
+        #     attachment_name = attachment_name.encode('utf-8')
+        #     print 'LOG: ' + attachment_name
         try:
             print 'Creating attachment %s for issue %s' % \
                   (attachment_name, issue_id)
